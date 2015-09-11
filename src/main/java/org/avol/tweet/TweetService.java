@@ -40,6 +40,6 @@ public class TweetService extends Application<TweetConfiguration> {
         final TweetResource tweetResource = new TweetResource(injector.getInstance(TweetBusinessServiceImpl.class));
         environment.jersey().register(tweetResource);
         environment.lifecycle().manage(injector.getInstance(TweetDaoImpl.class));
-        environment.healthChecks().register("dbHealthCheck", new DBHealthCheck());
+        environment.healthChecks().register("DbHealthCheck",injector.getInstance(DBHealthCheck.class));
     }
 }

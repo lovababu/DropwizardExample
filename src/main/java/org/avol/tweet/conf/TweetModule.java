@@ -7,6 +7,7 @@ import com.google.inject.Singleton;
 import lombok.Setter;
 import org.avol.tweet.dao.TweetDao;
 import org.avol.tweet.dao.impl.TweetDaoImpl;
+import org.avol.tweet.healthchecks.DBHealthCheck;
 import org.avol.tweet.service.TweetBusinessService;
 import org.avol.tweet.service.impl.TweetBusinessServiceImpl;
 
@@ -38,6 +39,12 @@ public class TweetModule extends AbstractModule {
         Connection con = DriverManager.getConnection(dbConfig.getConnURL(),
                 dbConfig.getUserName(), dbConfig.getPassword());
         return con;
+    }
+
+    @Provides
+    @Singleton
+    public DBHealthCheck dbHealthCheck(Connection connection) {
+        return new DBHealthCheck(connection);
     }
 
     /*public static void main(String[] args) {
