@@ -1,4 +1,5 @@
 ### Dropwizard with Guice DI, H2 DB.
+ Guide you.
   1. How to implement dropwizard application.
   2. How to use Guice DI within dropwizard.
   3. How to integrate H2 embedded database with dropwizard application.
