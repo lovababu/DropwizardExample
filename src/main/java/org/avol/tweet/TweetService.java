@@ -13,6 +13,8 @@ import org.avol.tweet.service.impl.TweetBusinessServiceImpl;
 
 /**
  * Created by Durga on 9/11/2015.
+ *
+ * Explains the Dropwizard framework with simple Guice injection and H2 database connectivity.
  */
 public class TweetService extends Application<TweetConfiguration> {
 
