@@ -23,4 +23,7 @@ public class TweetResponse {
     @JsonProperty
     private List<Tweet> tweets;
 
+    @JsonProperty
+    private int statusCode;
+
 }

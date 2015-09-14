@@ -61,7 +61,7 @@ public class TweetDaoImpl implements TweetDao , Managed {
             tweet.setMessage(resultSet.getString("MESSAGE"));
             tweet.setDate(resultSet.getTimestamp("POSTED_ON").toString());
         }
-        log.info("Tweet fetched from DB is: " + tweet.toString());
+        log.info("Tweet fetched from DB is: " + tweet);
         preparedStatement.close();
         return tweet;
     }
